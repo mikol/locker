@@ -6,17 +6,18 @@
 var id = '';
 var dependencies = [
   'actually',
-  'criteria',
   'fs',
   '../locker',
+  'promise',
   'sinon',
   'actually/resolves',
-  'actually/throws'
+  'actually/throws',
+  'criteria'
 ];
 
-function factory(actually, $1, fs, Locker, sinon, resolves, throws) {
+function factory(actually, fs, Locker, Promise, sinon, resolves, throws) {
   /* globals scope, test */
-  var filename = '/tmp/locker.test.' + process.pid + '.lock';
+  var filename = '/tmp/basic-locker.test.' + process.pid + '.lock';
 
   process.setMaxListeners(1024);
 
